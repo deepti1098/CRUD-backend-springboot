@@ -1,9 +1,9 @@
 pipeline {
     agent any
-        tools {
-            maven 'Maven 3.9.1'
-            jdk 'openjdk19'
-        }
+    tools {
+        maven 'Maven 3.9.1'
+        jdk 'jdk9'
+    }
     stages {
         stage ('Initialize') {
             steps {
@@ -12,10 +12,11 @@ pipeline {
                     echo "M2_HOME = ${M2_HOME}"
                 '''
             }
+        }
 
-        stage('Build') {
+        stage ('Build') {
             steps {
-               echo 'This is a minimal pipeline.'
+                echo 'This is a minimal pipeline.'
             }
         }
     }
